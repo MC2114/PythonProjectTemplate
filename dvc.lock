@@ -10,8 +10,8 @@ stages:
       nfiles: 11
     - path: src/cdstemplate/corpus_counter_script.py
       hash: md5
-      md5: 0db1baa08c580811414d608bd98bd7d9
-      size: 2596
+      md5: 3c096fb32ea10099efd9e1aac13748ee
+      size: 3039
     outs:
     - path: data/gutenberg_counts.csv
       hash: md5
