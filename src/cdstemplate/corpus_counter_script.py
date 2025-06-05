@@ -5,12 +5,12 @@ writes the corpus counts to a user-specified CSV file
 # Import modules, functions and classes from external libraries
 import argparse
 import logging
-from pathlib import Path
+from pathlib import Path # extract file paths
 
 # Import the code from this project needed for this script
 from cdstemplate import word_count, utils
 
-logger = logging.getLogger(__name__)
+logger = logging.getLogger(__name__) # Logging API: all python modules can participate in logging, basiclaly log wehn call functions with logger.info()
 
 
 def main_cli():
@@ -31,9 +31,15 @@ def main_cli():
     parser.add_argument(
         "--case-insensitive",
         "-c",
-        action="store_true",
+        action="store_true", # on/offf flag, basically making this optional
         help="Default is to have case sensitive tokenization. Use this flag to make the token counting case insensitive. Optional.",
     )
+
+    # In pyproject.toml -> corpus-counter set to a command line -> runs this script with function main_cli
+    # argparse = Parge the input when users
+        # csv: output file
+        # document_dir: origin .txt filepath to count
+        # (optional flags)
 
     args = parser.parse_args()
     utils.configure_logging()
